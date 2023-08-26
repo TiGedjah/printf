@@ -9,21 +9,22 @@
  *
  * Return: the width
  */
+ 
 int get_width(const char *format, int *i, va_list list)
 {
-	int aa;
-	int w = 0;
+	int c;
+	int w = 0; /*where w = width*/
 
-	for (aa = *i + 1; format[aa] != '\0'; aa++)
+	for (c = *i + 1; format[c] != '\0'; c++)
 	{
-		if (is_digit(format[aa]))
+		if (is_digit(format[c]))
 		{
 			w *= 10;
-			w += format[aa] - '0';
+			w += format[c] - '0';
 		}
-		else if (format[aa] == '*')
+		else if (format[c] == '*')
 		{
-			aa++;
+			c++;
 			w = va_arg(list, int);
 			break;
 		}
@@ -31,7 +32,7 @@ int get_width(const char *format, int *i, va_list list)
 			break;
 	}
 
-	*i = aa - 1;
+	*i = c - 1;
 
 	return (w);
 }

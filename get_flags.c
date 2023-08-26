@@ -11,27 +11,25 @@
  
 int get_flags(const char *format, int *i)
 {
-	/* - + 0 # ' ' */
-	/* 1 2 4 8  16 */
-	int j, curr_i;
-	int flags = 0;
-	const char FLAGS_CH[] = {'-', '+', '0', '#', ' ', '\0'};
-	const int FLAGS_ARR[] = {f_minus, f_plus, f_zero, f_hash, f_space, 0};
+	int a, c;
+	int f = 0; /*where f = flags*/
+	const char f_char[] = {'-', '+', '0', '#', ' ', '\0'};
+	const int f_arr[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
 
-	for (curr_i = *i + 1; format[curr_i] != '\0'; curr_i++)
+	for (c = *i + 1; format[c] != '\0'; c++)
 	{
-		for (j = 0; FLAGS_CH[j] != '\0'; j++)
-			if (format[curr_i] == FLAGS_CH[j])
+		for (a = 0; f_char[a] != '\0'; a++)
+			if (format[c] == f_char[a])
 			{
-				flags |= FLAGS_ARR[j];
+				f |= f_arr[a];
 				break;
 			}
 
-		if (FLAGS_CH[j] == 0)
+		if (f_char[a] == 0)
 			break;
 	}
 
-	*i = curr_i - 1;
+	*i = c - 1;
 
-	return (flags);
+	return (f);
 }

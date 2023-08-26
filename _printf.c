@@ -4,11 +4,10 @@
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * _printf - for the printf function
- * @format: format or style
- * Return: all the printed char
+ * _printf - depicts the use of the function, printf
+ * @format: the format for using printf
+ * Return: the result
  */
- 
 int _printf(const char *format, ...)
 {
 	int a, printed = 0, printed_chars = 0;
@@ -55,10 +54,11 @@ int _printf(const char *format, ...)
 }
 
 /**
- * print_buffer - to print out the content of the buffer only if it exists
- * @buffer: an array of char values
- * @buff_ind: buffer index of length
+ * print_buffer - to print out all the contents of a buffer
+ * @buffer: the array of chars
+ * @buff_ind: buffer index
  */
+ 
 void print_buffer(char buffer[], int *buff_ind)
 {
 	if (*buff_ind > 0)
