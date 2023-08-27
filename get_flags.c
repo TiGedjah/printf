@@ -5,10 +5,10 @@
  * get_flags - to calculate all active flags
  * @i: set parameter
  * @format: the format of string to print
- * 
+ *
  * Return: flag
  */
- 
+
 int get_flags(const char *format, int *i)
 {
 	int a, c;

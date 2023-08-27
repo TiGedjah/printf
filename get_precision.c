@@ -9,7 +9,7 @@
  *
  * Return: p
  */
- 
+
 int get_precision(const char *format, int *i, va_list list)
 {
 	int c = *i + 1;

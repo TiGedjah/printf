@@ -12,7 +12,7 @@
  * @size: to specify size
  * Return: number of chars
  */
- 
+
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -29,7 +29,7 @@ int print_pointer(va_list types, char buffer[],
 		return (write(1, "(nil)", 5));
 
 	buffer[BUFF_SIZE - 1] = '\0';
-	
+
 	UNUSED(precision);
 
 	address = (unsigned long)a;
@@ -43,10 +43,10 @@ int print_pointer(va_list types, char buffer[],
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		p = '0';
-	
+
 	if (flags & F_PLUS)
 		xtra = '+', len++;
-	
+
 	else if (flags & F_SPACE)
 		xtra = ' ', len++;
 
@@ -66,7 +66,7 @@ int print_pointer(va_list types, char buffer[],
  * @size: to specify size
  * Return: number of chars
  */
- 
+
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -149,7 +149,7 @@ int print_reverse(va_list types, char buffer[],
  * @size: to specify size
  * Return: number of chars
  */
- 
+
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
